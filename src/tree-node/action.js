@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import Parser from 'html-react-parser'
 
 class Action extends PureComponent {
   static propTypes = {
@@ -27,7 +28,7 @@ class Action extends PureComponent {
 
     return (
       <i title={title} className={className} onClick={!readOnly ? this.handleClick : undefined}>
-        {text}
+        {Parser(text)}
       </i>
     )
   }
